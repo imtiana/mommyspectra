@@ -1,0 +1,14 @@
+<ul class="">
+    {% if user.is_authenticated %}
+    <li>
+        <a href="/logout/">Logout</a><br />
+    </li>
+    {% else %}
+    <li>
+        <a href="/register/">Register Here</a> 
+    </li>
+    <li>
+        <a href="/login/">Login</a>
+    </li>
+    {% endif %}
+</ul>

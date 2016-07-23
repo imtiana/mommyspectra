@@ -1,0 +1,26 @@
+{% load staticfiles %}
+
+<html>
+  <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+  {% block styles %} {% endblock styles %}
+
+  <header>
+      {% block head %}<h1>milk pls</h1>{% endblock head %}
+  </header>
+
+  <body>
+
+  <div class = "nav">
+    {% block nav %}
+       {% include 'nav_list.html' %}
+    {% endblock nav %}
+    </div>
+
+    <div class="content-wrapper">
+    {% block content %}{% endblock content %}
+    </div>
+
+  </body>
+</html>

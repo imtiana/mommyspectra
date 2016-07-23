@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+  {% if user.is_authenticated %}
+    <h1>Welcome back {{ user.username }}, from milk pls!</h1>
+
+  {% else %}
+    <h1>Do you want milk?</h1>
+    <p>or have milk to spare?</p>
+        
+    {% endif %}
+{% endblock %}
