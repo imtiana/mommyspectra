@@ -7,8 +7,10 @@ from django.template import RequestContext
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 
+from spectra.milk.models import MilkPost
 from spectra.user.forms import UserForm
 
 @login_required
 def search(request):
-    return render_to_response('milk_search.html')
+    milk_posts = MilkPost.objects.filter(status=MilkPost.AVAILABLE)
+    return render_to_response('milk_search.html', context={'posts': milk_posts})

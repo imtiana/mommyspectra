@@ -1,4 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
     search for milk
+    <table>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Quantity</th>
+    {% for post in posts %}
+        <tr>
+            <td>{{ post.provider.user.first_name }}</td>
+            <td>{{ post.provider.user.last_name }}</td>
+            <td>{{ post.quantity }}</td>
+        </tr>
+    {% endfor %}
+    </table>
 {% endblock %}
