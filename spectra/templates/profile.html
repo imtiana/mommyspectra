@@ -1,10 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-    search by location
-    <form type="get" action="/milk">
-        <input type="text" name="search_city"  placeholder="Search...">
-        <input type="submit" value="search">
-    </form>
+    <h1>Your profile</h1>
+    <h2>Your posts</h2>
     <table>
         <th>First Name</th>
         <th>Last Name</th>
@@ -18,11 +15,6 @@
             <td>{{ post.quantity }}</td>
             <td>{{ post.location.city }}</td>
             <td>{{ post.post_date }}</td>
-            <td>
-                <form type="post" action="/milk/transaction">
-                    <button name = "post" type="submit" value={{ post.id }}>Request</button>
-                </form>
-            </td>
         </tr>
     {% endfor %}
     </table>

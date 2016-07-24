@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+    Request {{ post.quantity }} liter of breastmilk from {{ post.provider.user.first_name }} {{ post.provider.user.last_name }} in {{ post.location.city }}?
+    <form type="post" action="/milk/post_transaction">
+        <button name = "post" type="submit" value={{ post.id }}>Confirm</button>
+    </form>
+    <form type="post" action="/milk">
+        <button type="submit">Cancel</button>
+    </form>
+
+{% endblock %}

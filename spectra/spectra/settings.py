@@ -85,10 +85,7 @@ DATABASES = {
         'USER': getpwuid(getuid())[0],
         'PASSWORD': '',
         'HOST': '',
-        'PORT': '',
-        'OPTIONS': {
-            'init_command': 'SET storage_engine=INNODB;SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED',
-        }
+        'PORT': ''
     },
 }
 
