@@ -8,6 +8,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 
 from spectra.user.forms import UserForm
+from spectra.milk.models import *
 
 # Create your views here.
 
@@ -61,7 +62,6 @@ def user_logout(request):
     return HttpResponseRedirect('/')
 
 def register(request):
-    # Like before, get the request's context.
     context = RequestContext(request)
 
     # A boolean value for telling the template whether the registration was successful.
@@ -102,3 +102,9 @@ def register(request):
             'register.html',
             {'user_form': user_form, 'registered': registered},
             context)
+
+def profile(request):
+    context = RequestContext(request)
+    milk_posts = MilkPost.objects.filter(provider=request.user.userprofile)
+    context['posts'] = milk_posts
+    return render_to_response('profile.html', context=context)
