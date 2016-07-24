@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h1>Add your milk</h1>
+    
+		<form id="addmilk_form" method="post" action="/milk/add/">
+		{% csrf_token %}
+		<b>Quantity of your milk:</b> <input type="text" name="quantity" value="" size="50" />
+		<br /><br /><br />
+		<b>Location:</b><br />
+		Street Address<input type="text" name="address" value="" size="50" /><br />
+		City <input type="text" name="city" value="" size="30" /><br />
+		Region <input type="text" name="region" value="" size="10" /><br />
+		State <input type="text" name="state" value="" size="10" /><br />
+		Country <input type="text" name="country" value="" size="10" /><br />
+		<br />
+
+    <input type="submit" value="submit" />
+		</form>
+
+{% endblock %}
